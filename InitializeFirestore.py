@@ -16,7 +16,7 @@ class InitializeFirestore:
         self.db = None
     
     def initialize_db(self):
-        os.environ["GOOGLE_APPLICATION_CREDENTIALS "] = "clouddrive-351300-821f95007881.json"
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS "] = "clouddrive-351300-38f1e56fcb9e.json"
 
         cred = credentials.ApplicationDefault()
         firebase_admin.initialize_app(cred, {
