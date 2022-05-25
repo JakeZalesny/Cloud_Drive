@@ -4,6 +4,9 @@ INITIALIZE FIRESTORE
 ARGS: NONE
 RTRNS: DB CLIENT
 
+DESCRIPTION: 
+Initializest the firebase account and returns it making sure
+that the other classes are able to use it. 
 """
 
 import firebase_admin
