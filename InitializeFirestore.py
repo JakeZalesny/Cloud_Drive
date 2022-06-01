@@ -28,5 +28,5 @@ class InitializeFirestore:
         db = firestore.client()
         self.db = db
     
-    def get_db_cliet(self):
+    def get_db_client(self):
         return self.db
