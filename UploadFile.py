@@ -7,9 +7,11 @@ RTRNS: NONE
 """
 
 class UploadFile: 
-    def __init__(self, db) -> None:
+    def __init__(self, db, upload_path) -> None:
         self.db = db
         self.file_name = None
+        self.upload_path = upload_path
+        self._storage = firebase.
     
     def set_filename(self) -> str:
         valid_filename = False
@@ -21,7 +23,8 @@ class UploadFile:
             else :
                 valid_filename == True
     
-    def get_filename(self):
+    def get_filename(self) -> str:
         return self.file_name
     
-    
+    def upload_file(self):
+

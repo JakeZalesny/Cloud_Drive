@@ -11,8 +11,7 @@ from CreateUploadFolder import CreateUploadFolder
 
 
 def main(): 
-    create_folder = CreateUploadFolder()
-    create_folder.get_desktop_filepath() 
+    create_folder.create_directories()
 
 if __name__ == "__main__":
     main()
