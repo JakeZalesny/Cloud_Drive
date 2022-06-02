@@ -7,7 +7,7 @@ RTRNS: NONE
 """
 
 
-from CreateUploadFolder import CreateUploadFolder
+from CreateDirectories import CreateDirectories
 
 
 def main(): 

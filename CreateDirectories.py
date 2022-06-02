@@ -2,7 +2,7 @@
 
 import os
 
-class CreateUploadFolder: 
+class CreateDirectories: 
     def __init__(self) -> None:
         #self.db = db
         self._username = os.environ.get('USERNAME')
@@ -10,6 +10,7 @@ class CreateUploadFolder:
         self._full_path = r'{}/Cloud Storage/'.format(self._desktop_filepath)
         self._upload_path = r'{}/Cloud Storage/Upload Files'.format(self._desktop_filepath)
         self._uploaded_path = r'{}/Cloud Storage/Uploaded Files'.format(self._desktop_filepath)
+        self._download_path = r'{}/Cloud Storage/Downloaded Files'.format(self._desktop_filepath)
     
 
     
@@ -19,6 +20,7 @@ class CreateUploadFolder:
             os.chdir(self._desktop_filepath)
             os.makedirs(f'{self._upload_path}')
             os.makedirs(f'{self._uploaded_path}')
+            os.makedirs(f'{self._download_path}')
     
     
     def get_upload_path(self):
@@ -26,4 +28,7 @@ class CreateUploadFolder:
 
     
     def get_uploaded_path(self):
-        return self._uploaded_path    
+        return self._uploaded_path  
+
+    def get_downloaded_path(self):
+        return self._download_path  
