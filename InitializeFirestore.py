@@ -26,7 +26,8 @@ class InitializeFirestore:
             "storageBucket": "clouddrive-351300.appspot.com",
             "messagingSenderId": "935060460328",
             "appId": "1:935060460328:web:7d4630993d4be23551361d",
-            "measurementId": "G-R334D0KR8D"
+            "measurementId": "G-R334D0KR8D",
+            "databaseURL":"gs://clouddrive-351300.appspot.com"
             }
         self.firebase = pyrebase.initialize_app(self.config)
 

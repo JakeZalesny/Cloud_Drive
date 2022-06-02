@@ -31,4 +31,7 @@ class CreateDirectories:
         return self._uploaded_path  
 
     def get_downloaded_path(self):
-        return self._download_path  
+        return self._download_path
+
+    def get_username(self):
+        return self._username  
