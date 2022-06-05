@@ -9,8 +9,9 @@ DESC: Deletes a file from the bucket and returns a bool to help log it
 """
 
 class DeleteFile: 
-    def __init__(self, storage_client) -> None:
+    def __init__(self, storage_client, token) -> None:
         self.storage = storage_client
+        self.token = token
         self.delete_filename = None
 
     def get_delete_filename(self): 
@@ -18,7 +19,7 @@ class DeleteFile:
     
     
     def delete_file(self):
-        self.storage.child(self.delete_filename).delete()
+        self.storage.delete(self.delete_filename, self.token)
         return True
     
     def return_filename(self):

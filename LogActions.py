@@ -22,18 +22,28 @@ class LogActions:
         self.upload = upload
         self.db = db_client
         self.filename = filename
+        self.action = None
+
+    def determine_action(self):
+        if self.delete == True :
+            self.action = "Delete"
+        
+        elif self.upload == True :
+            self.action = "Upload"
+        
+        else :
+            self.action = "Download"
     
     def log_action(self):
-        if self.upload == True :
-            data = {
-                "User" : self.username,
-                "Action": "Upload",
-                "Object": self.filename,
-                "Timestamp":firestore.SERVER_TIMESTAMP
-            }
-
-        elif self.download == True :
-            pass
-            
-        elif self.delete == True :
-            pass
+        document = "Log_1"
+        data = {
+            "User" : self.username,
+            "Action": self.action,
+            "Object": self.filename,
+            "Timestamp": "something"
+        }
+        self.db.collection("Storage Log").document({document}).set(data)
+    
+    def display_log(self):
+        results = self.db.collection("Storage Log").get()
+        print(results)

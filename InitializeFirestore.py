@@ -12,13 +12,15 @@ that the other classes are able to use it.
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from google.cloud import storage
 import pyrebase
 import os
 
 class InitializeFirestore:
-    def __init__(self) -> None:
+    def __init__(self, username) -> None:
         self.db = None
         self.storage = None
+        self.username = username
         self.config = {  
             "apiKey": "AIzaSyC4yyCVXLygEnxp1lQ29xbNxLSj9ziRulQ",
             "authDomain": "clouddrive-351300.firebaseapp.com",
@@ -30,14 +32,15 @@ class InitializeFirestore:
             "databaseURL":"gs://clouddrive-351300.appspot.com"
             }
         self.firebase = pyrebase.initialize_app(self.config)
+        self.token = "https://oauth2.googleapis.com/token"
 
     def initialize_db(self):
-        os.environ["GOOGLE_APPLICATION_CREDENTIALS "] = "clouddrive-351300-38f1e56fcb9e.json"
-
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS "] = "/Users/jrzal/Downloads/clouddrive-351300-38f1e56fcb9e.json"
         cred = credentials.ApplicationDefault()
         firebase_admin.initialize_app(cred, {
             "project_id": "clouddrive-351300", 
         })
+        
         db = firestore.client()
         self.db = db
     
@@ -49,3 +52,6 @@ class InitializeFirestore:
     
     def get_storage(self):
         return self.firebase.storage()
+    
+    def get_token(self):
+        return self.token

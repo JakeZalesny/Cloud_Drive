@@ -7,8 +7,7 @@ RTRNS: NONE
 """
 
 class UploadFile: 
-    def __init__(self, db, upload_path, storage) -> None:
-        self.db = db
+    def __init__(self, upload_path, storage) -> None:
         self.file_name = None
         self.upload_path = upload_path
         self.storage = storage
@@ -25,6 +24,7 @@ class UploadFile:
             
             else :
                 valid_filename == True
+                break
     
     def get_filename(self) -> str:
         return self.file_name
