@@ -12,7 +12,6 @@ that the other classes are able to use it.
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-from google.cloud import storage
 import pyrebase
 import os
 
